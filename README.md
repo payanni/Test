@@ -12,7 +12,7 @@ Een statische Nederlandstalige vastgoedsite geinspireerd op de look and feel van
 ## Lokaal draaien
 
 ```bash
-npm start
+python3 -m http.server 4173
 ```
 
 Open daarna `http://localhost:4173`.

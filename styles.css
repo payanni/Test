@@ -1059,6 +1059,10 @@ a {
   margin: 22px 0 0;
 }
 
+.hero-copy h1 {
+  color: var(--alan-ink);
+}
+
 .trust-row {
   display: flex;
   flex-wrap: wrap;
