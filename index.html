@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ALAN Immo is een heldere vastgoedwebsite met zoekfilters, bezoekmomenten, bezoekersinzichten en lead scoring voor verkopers."
+    />
+    <title>ALAN Immo | Gezonde vastgoedleads</title>
+    <link rel="preconnect" href="https://raw.githubusercontent.com" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Hoofdnavigatie">
+        <a class="brand" href="#top" aria-label="ALAN Immo home">
+          <span class="brand-mark">a</span>
+          <span>ALAN Immo</span>
+        </a>
+        <div class="nav-links">
+          <a href="#woningen">Woningen</a>
+          <a href="#inzichten">Inzichten</a>
+          <a href="#bezoeken">Bezoekmomenten</a>
+          <a href="#leads">Leads</a>
+        </div>
+        <a class="button button-small" href="#dashboard">Verkoper dashboard</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero section">
+        <div class="hero-copy">
+          <p class="eyebrow">Vastgoed zonder drempels</p>
+          <h1>Een kalme immo ervaring voor kopers en sterke leads voor verkopers.</h1>
+          <p class="hero-text">
+            Zoek, vergelijk en boek bezoekmomenten in enkele klikken. Verkopers zien welke
+            bezoekers actief zijn, organiseren rondleidingen en rangschikken leads met een
+            duidelijke score.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#woningen">Bekijk woningen</a>
+            <a class="button button-secondary" href="#dashboard">Bekijk demo dashboard</a>
+          </div>
+          <div class="trust-row" aria-label="Platformstatistieken">
+            <span><strong>128</strong> actieve zoekers</span>
+            <span><strong>36</strong> bezoekmomenten</span>
+            <span><strong>4,8/5</strong> verkopersscore</span>
+          </div>
+        </div>
+        <aside class="hero-panel" aria-label="Uitgelichte woning">
+          <div class="home-illustration">
+            <span class="roof"></span>
+            <span class="window window-one"></span>
+            <span class="window window-two"></span>
+            <span class="door"></span>
+          </div>
+          <div class="floating-card floating-card-top">
+            <span class="status-dot"></span>
+            42 bezoekers vandaag
+          </div>
+          <div class="floating-card floating-card-bottom">
+            Lead score +18% deze week
+          </div>
+          <div class="hero-panel-content">
+            <p class="label">Uitgelicht</p>
+            <h2>Familiewoning aan het park</h2>
+            <p>Gentbrugge · 4 slaapkamers · EPC B</p>
+            <div class="price-row">
+              <strong>€ 645.000</strong>
+              <span>Open huis zaterdag</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section search-section" id="woningen">
+        <div class="section-heading">
+          <p class="eyebrow">Slim zoeken</p>
+          <h2>Filter woningen zoals kopers dat verwachten.</h2>
+          <p>
+            Locatie, budget, woningtype, slaapkamers, EPC, oppervlakte en buitenruimte zitten in
+            een compacte zoekervaring met directe resultaten.
+          </p>
+        </div>
+
+        <form class="filter-card" id="propertyFilters" aria-label="Woningfilters">
+          <label>
+            Locatie
+            <select id="locationFilter" name="location">
+              <option value="all">Alle locaties</option>
+            </select>
+          </label>
+          <label>
+            Type
+            <select id="typeFilter" name="type">
+              <option value="all">Alle types</option>
+            </select>
+          </label>
+          <label>
+            Max. budget
+            <select id="budgetFilter" name="budget">
+              <option value="all">Geen maximum</option>
+              <option value="350000">Tot € 350.000</option>
+              <option value="500000">Tot € 500.000</option>
+              <option value="700000">Tot € 700.000</option>
+              <option value="900000">Tot € 900.000</option>
+            </select>
+          </label>
+          <label>
+            Slaapkamers
+            <select id="bedroomFilter" name="bedrooms">
+              <option value="all">Maakt niet uit</option>
+              <option value="1">Min. 1</option>
+              <option value="2">Min. 2</option>
+              <option value="3">Min. 3</option>
+              <option value="4">Min. 4</option>
+            </select>
+          </label>
+          <label>
+            Oppervlakte
+            <select id="surfaceFilter" name="surface">
+              <option value="all">Alle oppervlaktes</option>
+              <option value="90">Min. 90 m2</option>
+              <option value="130">Min. 130 m2</option>
+              <option value="180">Min. 180 m2</option>
+            </select>
+          </label>
+          <label>
+            EPC
+            <select id="energyFilter" name="energy">
+              <option value="all">Alle labels</option>
+              <option value="A">A of beter</option>
+              <option value="B">B of beter</option>
+              <option value="C">C of beter</option>
+            </select>
+          </label>
+          <label class="checkbox-label">
+            <input id="outdoorFilter" type="checkbox" name="outdoor" />
+            Buitenruimte
+          </label>
+          <button class="button button-secondary" type="reset">Reset filters</button>
+        </form>
+
+        <div class="results-toolbar">
+          <p id="resultSummary">Woningen laden...</p>
+          <span class="pill">Realtime demo data</span>
+        </div>
+        <div class="listing-grid" id="listingGrid"></div>
+      </section>
+
+      <section class="section dashboard" id="dashboard">
+        <div class="section-heading">
+          <p class="eyebrow">Verkoper cockpit</p>
+          <h2>Alles wat listings nodig hebben om van bezoek naar lead te gaan.</h2>
+          <p>
+            De dashboardmodules combineren bezoekersinzichten, planning van bezoekmomenten en
+            leadprioritering in een rustige ALAN-achtige interface.
+          </p>
+        </div>
+
+        <div class="dashboard-grid" id="inzichten">
+          <article class="panel panel-large">
+            <div class="panel-heading">
+              <div>
+                <p class="label">Bezoekersinzichten</p>
+                <h3>Wie bekeek mijn woning?</h3>
+              </div>
+              <span class="pill pill-blue" id="visitorCount">0 bezoekers</span>
+            </div>
+            <div class="metric-grid" id="metricGrid"></div>
+            <div class="visitor-list" id="visitorList"></div>
+          </article>
+
+          <article class="panel" id="bezoeken">
+            <div class="panel-heading">
+              <div>
+                <p class="label">Planning</p>
+                <h3>Bezoekmoment organiseren</h3>
+              </div>
+            </div>
+            <form class="stacked-form" id="viewingForm">
+              <label>
+                Woning
+                <select id="viewingProperty" required></select>
+              </label>
+              <div class="form-row">
+                <label>
+                  Datum
+                  <input id="viewingDate" type="date" required />
+                </label>
+                <label>
+                  Uur
+                  <input id="viewingTime" type="time" required />
+                </label>
+              </div>
+              <label>
+                Capaciteit
+                <input id="viewingCapacity" type="number" min="1" max="20" value="6" required />
+              </label>
+              <label>
+                Type bezoek
+                <select id="viewingType">
+                  <option>Open huis</option>
+                  <option>Privetour</option>
+                  <option>Avondbezoek</option>
+                </select>
+              </label>
+              <button class="button" type="submit">Moment toevoegen</button>
+            </form>
+          </article>
+        </div>
+
+        <div class="dashboard-grid dashboard-grid-bottom">
+          <article class="panel panel-large">
+            <div class="panel-heading">
+              <div>
+                <p class="label">Inschrijvingen</p>
+                <h3>Beschikbare bezoekmomenten</h3>
+              </div>
+              <span class="pill">Klik op inschrijven</span>
+            </div>
+            <form class="signup-bar" id="signupForm">
+              <label>
+                Bezoeker
+                <select id="visitorSelect"></select>
+              </label>
+              <label>
+                Bezoekmoment
+                <select id="viewingSelect"></select>
+              </label>
+              <button class="button button-secondary" type="submit">Inschrijven</button>
+            </form>
+            <div class="viewing-list" id="viewingList"></div>
+          </article>
+
+          <article class="panel" id="leads">
+            <div class="panel-heading">
+              <div>
+                <p class="label">Lead scoring</p>
+                <h3>Rangschik bezoekers</h3>
+              </div>
+            </div>
+            <p class="muted">
+              Pas de score aan op basis van koopintentie, financiering, fit met de woning en
+              engagement tijdens het bezoek.
+            </p>
+            <div class="lead-list" id="leadList"></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <strong>ALAN Immo</strong>
+        <p>Een demo voor menselijke vastgoedervaringen met sterke verkopersinzichten.</p>
+      </div>
+      <a class="button button-small button-secondary" href="#top">Terug naar boven</a>
+    </footer>
+
+    <p class="toast" id="dashboardMessage" hidden></p>
+    <script src="script.js"></script>
+  </body>
+</html>
